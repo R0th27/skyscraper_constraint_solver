@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:30:42 by htoe              #+#    #+#             */
-/*   Updated: 2026/01/23 11:12:49 by htoe             ###   ########.fr       */
+/*   Updated: 2026/01/24 18:17:01 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 typedef enum e_error
 {
 	ERR_OK,
-	ERR_BAD_FORMAT,
+	ERR_INVALID_USAGE,
+	ERR_INVALID_FORMAT,
 	ERR_INVALID_VALUE,
-	ERR_DUPLICATE,
 	ERR_MALLOC
 }	t_error;
 
