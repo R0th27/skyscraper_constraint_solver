@@ -6,12 +6,12 @@
 #    By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/23 10:39:06 by htoe              #+#    #+#              #
-#    Updated: 2026/01/23 10:56:50 by htoe             ###   ########.fr        #
+#    Updated: 2026/03/10 01:00:47 by htoe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Compilation
-NAME = ss_solver
+NAME = a.out
 CC = cc
 INCLUDE = include
 CFLAGS = -Wall -Wextra -Werror -I${INCLUDE}
@@ -46,6 +46,6 @@ re: fclean all
 	@echo "RELINKING"
 
 test: all
-	@./ss_solver "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+	@./a.out "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
 
 .PHONY: all clean fclean re test
