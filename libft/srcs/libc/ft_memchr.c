@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/13 17:36:04 by htoe             ###   ########.fr       */
+/*   Created: 2026/01/14 11:20:16 by htoe              #+#    #+#             */
+/*   Updated: 2026/02/14 19:40:45 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapper.h"
-#include "skyscrapper_types.h"
+#include "libft.h"
 
-void	print_error(t_error err)
+/*
+** ft_memchr
+**
+** Purpose:
+**     Scans the first n bytes of memory for a character.
+**
+** Returns:
+**     Pointer to first occurrence of c, or NULL if not found.
+*/
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (err == ERR_ARGS)
-		printf("Usage Error\n");
-}
+	const unsigned char	*str;
 
-t_error	run_program(int ac, char **av)
-{
-	//if (!validate_argument(ac, av))
-	//	return (ERR_ARGS);
-	(void)ac;
-	(void)av;
-	return (ERR_OK);
-}
-
-int	main(int ac, char **av)
-{
-	t_error	err;
-
-	err = run_program(ac, av);
-	if (err)
-		print_error(err);
-	return (err);
+	str = (const unsigned char *)s;
+	while (n--)
+	{
+		if (*str == (unsigned char)c)
+			return ((void *)str);
+		str++;
+	}
+	return (NULL);
 }

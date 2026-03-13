@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/13 17:36:04 by htoe             ###   ########.fr       */
+/*   Created: 2026/01/18 23:47:08 by htoe              #+#    #+#             */
+/*   Updated: 2026/02/14 20:09:42 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapper.h"
-#include "skyscrapper_types.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	print_error(t_error err)
-{
-	if (err == ERR_ARGS)
-		printf("Usage Error\n");
-}
+# include <unistd.h>
+# include <stdarg.h>
+# include <stddef.h>
 
-t_error	run_program(int ac, char **av)
-{
-	//if (!validate_argument(ac, av))
-	//	return (ERR_ARGS);
-	(void)ac;
-	(void)av;
-	return (ERR_OK);
-}
+int		ft_printf(const char *str, ...);
+void	pf_putchar(char c, int *byte);
+void	pf_putstr(char *str, int *byte);
+void	pf_putpointer(void *ptr, int *byte);
+void	pf_putnbr(long long num, int *byte);
+void	pf_puthex(unsigned int num, int flag, int *byte);
 
-int	main(int ac, char **av)
-{
-	t_error	err;
-
-	err = run_program(ac, av);
-	if (err)
-		print_error(err);
-	return (err);
-}
+#endif

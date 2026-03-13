@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/13 17:36:04 by htoe             ###   ########.fr       */
+/*   Created: 2026/01/14 01:59:29 by htoe              #+#    #+#             */
+/*   Updated: 2026/02/14 19:39:23 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapper.h"
-#include "skyscrapper_types.h"
+#include "libft.h"
 
-void	print_error(t_error err)
+/*
+** ft_bzero
+**
+** Purpose:
+**     Sets the first n bytes of memory to zero.
+**
+** Notes:
+**     - Equivalent to ft_memset(s, 0, n).
+*/
+void	ft_bzero(void *s, size_t n)
 {
-	if (err == ERR_ARGS)
-		printf("Usage Error\n");
-}
-
-t_error	run_program(int ac, char **av)
-{
-	//if (!validate_argument(ac, av))
-	//	return (ERR_ARGS);
-	(void)ac;
-	(void)av;
-	return (ERR_OK);
-}
-
-int	main(int ac, char **av)
-{
-	t_error	err;
-
-	err = run_program(ac, av);
-	if (err)
-		print_error(err);
-	return (err);
+	ft_memset(s, 0, n);
 }

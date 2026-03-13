@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/13 17:36:04 by htoe             ###   ########.fr       */
+/*   Created: 2026/01/19 08:21:00 by htoe              #+#    #+#             */
+/*   Updated: 2026/01/21 02:19:31 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "skyscrapper.h"
-#include "skyscrapper_types.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	print_error(t_error err)
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
+
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
+
+typedef struct s_gnode
 {
-	if (err == ERR_ARGS)
-		printf("Usage Error\n");
-}
+	char			*str;
+	ssize_t			len;
+	struct s_gnode	*next;
+}	t_gnode;
 
-t_error	run_program(int ac, char **av)
-{
-	//if (!validate_argument(ac, av))
-	//	return (ERR_ARGS);
-	(void)ac;
-	(void)av;
-	return (ERR_OK);
-}
+char	*get_next_line(int fd);
+int		find_nl(char const *str);
+void	free_gnode(t_gnode **head);
+ssize_t	line_length(t_gnode *head);
 
-int	main(int ac, char **av)
-{
-	t_error	err;
-
-	err = run_program(ac, av);
-	if (err)
-		print_error(err);
-	return (err);
-}
+#endif
