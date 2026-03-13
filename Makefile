@@ -6,7 +6,7 @@
 #    By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/23 10:39:06 by htoe              #+#    #+#              #
-#    Updated: 2026/03/13 17:37:10 by htoe             ###   ########.fr        #
+#    Updated: 2026/03/13 17:44:47 by htoe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ ${LIBFT}:
 
 ${NAME}: Makefile ${OBJS} ${LIBFT}
 	@echo "LINKING SKYSCRAPPER"
-	@${CC} ${OBJS} -o ${NAME}
+	@${CC} ${OBJS} ${LIBFLAGS} -o ${NAME}
 	@echo "COMPILATION SUCCESS"
 
 all: ${NAME}
