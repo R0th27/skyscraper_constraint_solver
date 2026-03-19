@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 19:18:03 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 19:24:18 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	main(int ac, char **av)
 	t_error		err;
 	t_puzzle	p;
 
-	err = validate_argument(&(p.size), ac, av);
-	if (!err)
-		err = store_clues(&p, av[1]);
+	err = parse_clues(&p, ac, av);
 	if (!err)
 		print_puzzle(p);
 	if (err)

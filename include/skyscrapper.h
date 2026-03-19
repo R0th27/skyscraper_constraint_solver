@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 10:30:42 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 19:15:59 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 19:24:05 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 # include <stdio.h>
 
 //Parse
-t_error	validate_argument(uint8_t *size, int ac, char **av);
-t_error	store_clues(t_puzzle *p, char *s);
+t_error	parse_clues(t_puzzle *p, int ac, char **av);
 
 //Error
 void	print_error(t_error err);

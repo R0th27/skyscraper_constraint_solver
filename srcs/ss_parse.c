@@ -6,13 +6,13 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 18:20:44 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 19:14:19 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 19:24:31 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "skyscrapper.h"
 
-t_error	validate_argument(uint8_t *size, int ac, char **av)
+static t_error	validate_argument(uint8_t *size, int ac, char **av)
 {
 	int	len;
 	int	digit;
@@ -39,7 +39,7 @@ t_error	validate_argument(uint8_t *size, int ac, char **av)
 	return (ERR_OK);
 }
 
-t_error	store_clues(t_puzzle *p, char *s)
+static t_error	store_clues(t_puzzle *p, char *s)
 {
 	int	side;
 	int	n;
@@ -60,4 +60,14 @@ t_error	store_clues(t_puzzle *p, char *s)
 		s++;
 	}
 	return (ERR_OK);
+}
+
+t_error	parse_clues(t_puzzle *p, int ac, char **av)
+{
+	t_error	 err;
+
+	err = validate_argument(&(p->size), ac, av);
+	if (!err)
+		err = store_clues(p, av[1]);
+	return (err);
 }
