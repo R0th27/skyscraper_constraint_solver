@@ -18,8 +18,7 @@ one box of each size.
 Rush01
 • Your output must display the first solution you encounter.
 • Here is how we will launch your program:
-> ./rush01 "col1top col2top col3top col4top col1bottom col2bottom col3bottom col4bottom row1left
-row2left row3left row4left row1right row2right row3right row4right"
+> ./rush01 "col1top col2top col3top col4top col1bottom col2bottom col3bottom col4bottom row1left row2left row3left row4left row1right row2right row3right row4right"
 • "col1top" represents the value for the left column upper point of view, etc.
 Refer to appendix 1 to see what represents each element.
 • Each element of the string is a number ranging between ’1’ and ’4’.

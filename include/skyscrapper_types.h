@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 08:06:53 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 18:22:06 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 19:12:57 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,10 @@ typedef enum e_side
 	RIGHT
 }	t_side;
 
-typedef struct s_clues
-{
-	uint8_t clue[SIDE][MAX_N];
-}	t_clues;
-
 typedef struct s_puzzle
 {
 	uint8_t		size;
-	uint8_t		(*clues)[MAX_N];
+	uint8_t 	clue[SIDE][MAX_N];
 }	t_puzzle;
 
 #endif

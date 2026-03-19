@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 18:20:44 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 18:20:53 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 19:14:19 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,28 @@ t_error	validate_argument(uint8_t *size, int ac, char **av)
 		|| digit < SIDE * MIN_N || digit > SIDE * MAX_N)
 		return (ERR_PARSE);
 	*size = digit / SIDE;
+	return (ERR_OK);
+}
+
+t_error	store_clues(t_puzzle *p, char *s)
+{
+	int	side;
+	int	n;
+
+	side = TOP;
+	n = 0;
+	while (*s)
+	{
+		if (n == p->size)
+		{
+			side++;
+			n = 0;
+		}
+		if (*s >= '1' && *s <= p->size + '0')
+			p->clue[side][n++] = (*s) - '0';
+		else if (*s != ' ')
+			return (ERR_PARSE);
+		s++;
+	}
 	return (ERR_OK);
 }

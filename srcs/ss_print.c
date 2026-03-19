@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ss_main.c                                          :+:      :+:    :+:   */
+/*   ss_print.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 19:18:03 by htoe             ###   ########.fr       */
+/*   Created: 2026/03/19 18:50:27 by htoe              #+#    #+#             */
+/*   Updated: 2026/03/19 19:17:55 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "skyscrapper.h"
 
-int	main(int ac, char **av)
+static void	print_clues(t_puzzle p, int size)
 {
-	t_error		err;
-	t_puzzle	p;
+	int	side;
+	int	n;
 
-	err = validate_argument(&(p.size), ac, av);
-	if (!err)
-		err = store_clues(&p, av[1]);
-	if (!err)
-		print_puzzle(p);
-	if (err)
-		print_error(err);
-	return (err);
+	side = 0;
+	while (side < SIDE)
+	{
+		n = -1;
+		while (++n < size)
+			printf("[%d]", p.clue[side][n]);
+		printf("\n");
+		side++;
+	}
+}
+
+void	print_puzzle(t_puzzle p)
+{
+	printf("### CLUES ###\n");
+	print_clues(p, p.size);
 }
