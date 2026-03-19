@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 08:25:09 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/13 17:56:59 by htoe             ###   ########.fr       */
+/*   Created: 2026/03/13 17:43:14 by htoe              #+#    #+#             */
+/*   Updated: 2026/03/19 16:49:35 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "skyscrapper.h"
 
-t_error	validate_argument(uint8_t *size, int ac, char **av)
+void	print_error(t_error err)
 {
-	if (ac != 2 || !av[1][0])
-		return (ERR_ARGS);
-	(void)size;
-	return (ERR_OK);
-}
-
-int	main(int ac, char **av)
-{
-	t_error		err;
-	t_puzzle	p;
-
-	err = validate_argument(&(p.size), ac, av);
-	if (err)
-		print_error(err);
-	return (err);
+	if (err == ERR_ARGS)
+		ft_putstr_fd("USAGE: ./ss_solver \"clues\"\n", STDERR_FILENO);
+	else if (err == ERR_PARSE)
+		ft_putstr_fd("Error\n", STDERR_FILENO);
 }

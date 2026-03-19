@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 08:06:53 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/10 09:04:41 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/19 18:22:06 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdint.h>
 
+# define MIN_N 4
 # define MAX_N 9
 # define MAX_PERM 362800
 # define SIDE 4

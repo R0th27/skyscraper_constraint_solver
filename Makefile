@@ -6,7 +6,7 @@
 #    By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/23 10:39:06 by htoe              #+#    #+#              #
-#    Updated: 2026/03/13 17:44:47 by htoe             ###   ########.fr        #
+#    Updated: 2026/03/19 17:00:27 by htoe             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 #Compilation
 NAME 		:= a.out
-CC			:= cc
+CC			:= gcc -g
 CFLAGS 		:= -Wall -Wextra -Werror
 CINCLUDE	:= -Iinclude -Ilibft/include
 LIBFLAGS	:= -Llibft -lft
