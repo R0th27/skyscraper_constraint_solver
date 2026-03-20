@@ -6,7 +6,7 @@
 /*   By: htoe <htoe@student.42bangkok.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 08:06:53 by htoe              #+#    #+#             */
-/*   Updated: 2026/03/19 19:12:57 by htoe             ###   ########.fr       */
+/*   Updated: 2026/03/20 12:20:59 by htoe             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@
 typedef enum e_error
 {
 	ERR_OK = 0,
-    ERR_ARGS,
-    ERR_PARSE,
-    ERR_MEMORY,
-    ERR_PERM,
-    ERR_DOMAIN,
-    ERR_NOSOLUTION
+	ERR_ARGS,
+	ERR_PARSE,
+	ERR_MEMORY,
+	ERR_PERM,
+	ERR_DOMAIN,
+	ERR_NOSOLUTION
 }	t_error;
 
 typedef enum e_side
@@ -42,7 +42,7 @@ typedef enum e_side
 typedef struct s_puzzle
 {
 	uint8_t		size;
-	uint8_t 	clue[SIDE][MAX_N];
+	uint8_t		clue[SIDE][MAX_N];
 }	t_puzzle;
 
 #endif
